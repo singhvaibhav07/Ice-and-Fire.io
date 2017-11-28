@@ -1,0 +1,25 @@
+<div class="container" ng-init="charCtrl.charactersDetail()">
+
+	<div class="row">
+		
+		<div class="col-lg-6 col-md-6 col-sm-12 mt-1 mb-1">
+			<button type="button" class="btn btn-primary btn-lg btn-block" ng-click="orderByField='name'; reverseSort = !reverseSort">Sort By Name
+				<span ng-show="orderByField == 'name'"><span ng-show="!reverseSort" class="fa fa-sort-desc" aria-hidden="true"></span><span ng-show="reverseSort" class="fa fa-sort-asc" aria-hidden="true"></span></span>
+			</button>
+		</div>
+
+		<!-- Sort by Culture -->
+		<div class="col-lg-6 col-md-6 col-sm-12 mt-1 mb-1">
+			<button type="button" class="btn btn-primary btn-lg btn-block" ng-click="orderByField = 'culture'; reverseSort = !reverseSort">Sort By Culture
+				<span ng-show="orderByField == 'culture'"><span ng-show="!reverseSort" class="fa fa-sort-desc" aria-hidden="true"></span><span ng-show="reverseSort" class="fa fa-sort-asc" aria-hidden="true"></span></span>
+			</button>
+		</div>
+
+	</div>
+
+	<div>
+
+		<char-detail></char-detail>
+	
+	</div>
+</div>

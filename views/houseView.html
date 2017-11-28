@@ -1,0 +1,11 @@
+<div class="container">
+	<div class="col-lg-12 col-md-12 col-sm-12" ng-repeat="house in houseCtrl.allHouse | filter:nameSearch | orderBy:orderByField:reverseSort">
+		<div class="card text-center">
+		  <h3 class="card-header card-info">{{$index+1}}) {{house.name}}</h3>
+		  <div class="card-block">
+		    <p class="card-text">Region : <strong>{{house.region}}</strong></p>
+		    <a href='#!houses/{{house.url.split("/").pop()}}' class="btn btn-info">House Info</a>
+		  </div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,14 @@
+
+
+<div class="row" ng-repeat="char in charCtrl.allChar | orderBy:'name' | filter:nameSearch | orderBy:orderByField:reverseSort">
+	<div class="col-lg-12 col-md-12 col-sm-12 mt-1 mb-1">
+	<div class="card text-center">
+	  <h3 class="card-header card-info">{{$index+1}}) {{char.name}}</h3>
+	  <div class="card-block">
+	    <p class="card-text">Gender : <strong>{{char.gender}}</strong></p>
+	    <p class="card-text" ng-if='char.culture!=""'>Culture : <strong>{{char.culture}}</strong></p>
+	    <a href='#!characters/{{char.url.split("/").pop()}}' class="btn btn-info">Character Info</a>
+	  </div>
+	</div>
+	</div>
+</div>

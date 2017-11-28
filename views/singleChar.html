@@ -1,0 +1,61 @@
+<div class="container-fluid" ng-controller="singleCharController as sinChCtrl" ng-init="sinChCtrl.getSinChar()">
+	<div class="row" ng-repeat="char in sinChCtrl.sinChar">
+		<div class="col-lg-12 col-md-12 col-sm-12">
+			<div class="card mt-2 text-center">
+				<h3 class="card-header" style="background-color: #2E5ACB;  color:white;"> {{char.name}} </h3>
+				<div class="row">
+					<div class="col-lg-6 col-md-12 col-sm-12">
+						<div class="card-block">
+							<h5 class="card-title" ng-if=' char.born!="" '>Born :- <br><strong>{{char.born}}</strong></h5><hr ng-if='char.born!=""'>
+
+						    <h5 class="card-title" ng-if=' char.gender!="" '>Gender :- <br><strong>{{char.gender}}</strong></h5><hr ng-if='char.gender!=""'>
+
+						    <h5 class="card-title" ng-if=' char.culture!="" '>Culture :- <br><strong>{{char.culture}}</strong></h5><hr ng-if='char.culture!=""'>
+
+						    <h5 class="card-title" ng-if=' char.father!="" '>Father :- <br><strong><a href='#!characters/{{char.father.split("/").pop()}}'>{{char.father.replace('https://www.anapioficeandfire.com/api/characters/','Character ')}}</a></strong></h5><hr ng-if='char.father!=""'>
+
+						    <h5 class="card-title" ng-if=' char.mother!="" '>Mother :- <br><strong><a href='#!characters/{{char.mother.split("/").pop()}}'>{{char.mother.replace('https://www.anapioficeandfire.com/api/characters/','Character ')}}</a></strong></h5><hr ng-if='char.mother!=""'>
+
+						    <h5 class="card-title" ng-if='char.spouse!="" '>Spouse :- <br><strong><a href='#!characters/{{char.spouse.split("/").pop()}}'>{{char.spouse.replace('https://www.anapioficeandfire.com/api/characters/','Character ')}}</a></strong></h5><hr ng-if='char.spouse!=""'>
+
+						    <h5 class="card-title" ng-if='char.died!="" '>Died :- <br><strong>{{char.died}}</strong></h5>
+						</div>
+					</div>
+
+					<div class="col-lg-6 col-md-12 col-sm-12">
+						<div class="card-block">
+						
+						    	<h5 class="card-title" ng-if=' char.titles!="" '>Title :- <br><strong>{{char.titles | limitTo:1}}</strong></h5>
+						    <hr ng-if='char.titles!=""'>
+
+						    <!-- He is famous by names -->
+						    <h5 class="card-title" ng-if='char.aliases!=""'>Known As :- <br><strong>{{char.aliases | limitTo:1}}</strong></h5><hr ng-if='char.aliases!=""'>
+						    <div ng-repeat="season in char.playedBy">
+						    	
+						    	<h5 class="card-title" ng-if='char.playedBy!=""'>Played By :- <br><strong>{{season}}</strong></h5>
+						    </div><hr ng-if='char.playedBy!=""'>
+
+						    <!-- Belong to house -->
+						    	<h5 class="card-title" ng-if='char.allegiances!=""'>Belong To :- <br><strong ng-repeat="house in char.allegiances"><a href='#!houses/{{house.split("/").pop()}}'>{{house.replace('https://www.anapioficeandfire.com/api/houses/','House ')}}</a><br></strong></h5>
+							<hr ng-if='char.allegiances!=""'>
+
+								<h5 class="card-title" ng-if='char.books!=""'>Find in :- <br>
+									<div ng-repeat="book in char.books">
+										<strong><a href='#!books/{{book.split("/").pop()}}'>{{book.replace('https://www.anapioficeandfire.com/api/books/','Book ')}}</a></strong>
+									</div>
+								</h5>
+							<hr ng-if='char.spouse!=""'>
+
+						    <!-- He/she appeared in diff. books -->
+						    <div>
+						    	<h5 class="card-title" ng-if='char.povBooks!=""'>Appeared In  :- <br><strong ng-repeat="viewed in char.povBooks"><a href='#!books/{{viewed.split("/").pop()}}' style="text-decoration: none;color:black;">{{viewed.replace('https://www.anapioficeandfire.com/api/books/','Book ') }}</a><br></strong></h5>
+						    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+</div>

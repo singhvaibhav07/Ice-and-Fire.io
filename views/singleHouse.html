@@ -1,0 +1,28 @@
+<div class="container-fluid" ng-controller="singleHouse as sinHou" ng-init="sinHou.sinHouse()">
+	<div class="row" ng-repeat="home in sinHou.singleHou">
+		<div class="col-lg-12 col-md-12 col-sm-12">
+			<div class="card text-center mt-2">
+				<h3 class="card-header" style="background-color: #2E5ACB; color:white;">{{home.name}}</h3>
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-12	">
+						<div class="card-block">
+							<h5 ng-if='home.founded!=""'>Founded In : <br><strong>{{home.founded}}</strong></h5><hr ng-if='home.founded!=""'>
+
+							<h5 ng-if='home.titles!=""'>Title : <br><strong>{{home.titles | limitTo:1}}</strong></h5><hr ng-if='home.titles!=""'>
+							<h5 ng-if='home.seats!=""'>Seat : <br><strong>{{home.seats | limitTo:1}}</strong></h5><hr ng-if='home.seats!=""'>
+
+							<h5 ng-if='home.currentLord!=""'>Current Lord : <br><a href='#!characters/{{home.currentLord.split("/").pop()}}'><strong>{{home.currentLord.replace('https://www.anapioficeandfire.com/api/characters','Character')}}</strong><br></a></h5><hr ng-if='home.currentLord!=""'>
+
+							<h5 ng-if='home.overlord!=""'>Over Lord : <br><a href='#!houses/{{home.overlord.split("/").pop()}}'><strong>{{home.overlord.replace('https://www.anapioficeandfire.com/api/houses','House')}}</strong><br></a></h5>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-12	">
+						<div class="card-block">
+							<h5>Sworn Members : <hr> <a ng-repeat="sworn in home.swornMembers" href='#!characters/{{sworn.split("/").pop()}}'><strong>{{sworn.replace('https://www.anapioficeandfire.com/api/characters','Character')}}</strong><br></a></h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

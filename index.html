@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="gotApp">
+<head>
+	<!-- Meta tag -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Game of Thrones</title>
+
+	<!-- bootstrap script -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Nosifer" rel="stylesheet">
+</head>
+<body>
+
+	<nav class="navbar navbar-light" style="background-color: #081025;">
+		<a  class="navbar-brand text-center" href="index.html"><span class="fa fa-fort-awesome" style="color: #f7f7f9;"></span><span style="color: #f7f7f9;">  Ice and Fire  </span> <span class="fa fa-fort-awesome" style="color: #f7f7f9;"></span></a>
+	</nav>
+
+	<div class="container-fluid">
+		
+	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12 col-md-12" style="text-align: center;">
+				<div class="row sticky-top">
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 mt-3" ng-controller="bookController as bookCtrl">
+						<a href="#!books" class="btn btn-block btn-info"><span class="fa fa-book" >    Books</span></a>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 mt-3" ng-controller="charController as charCtrl">
+						<a href="#!characters" class="btn btn-block btn-info"><span class="fa fa-user" aria-hidden="true">    Characters</span></a>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 mt-3" ng-controller="houseController as houseCtrl">
+						<a href="#!houses" class="btn btn-block btn-info"><span class="fa fa-home" aria-hidden="true">    Houses</span></a>
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-3 card">
+						<h5 class="card-header card-info">Enter Book / Character / House Name</h5><hr>
+						<label>
+							<input type="text" class="form-control" placeholder="Eg :- Tya Lannister" ng-model="nameSearch.name" name="gender">
+						</label>
+						<p><span class="fa fa-exclamation-triangle" aria-hidden="true"></span> Note :- Want to search book name first go to books. <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> </p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-12 col-md-12">
+				
+				<div ng-view>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- angular script -->
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.js"
+	  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	  crossorigin="anonymous">
+	</script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.6.6/angular-route.min.js"></script>
+
+	<!-- Main Controllers -->
+	<script type="text/javascript" src="angular/app.js"></script>	
+	<script type="text/javascript" src="angular/directives/customDirectives.js"></script>
+	<script type="text/javascript" src="angular/service.js"></script>
+
+	<!-- routing script -->
+	<script type="text/javascript" src="angular/route.js"></script>
+
+	<!-- book Controller and views -->
+	<script type="text/javascript" src="angular/controllers/bookController.js"></script>
+	<script type="text/javascript" src="angular/controllers/bookViewController.js"></script>
+
+	<!-- Character controller and views -->
+	<script type="text/javascript" src="angular/controllers/charController.js"></script>
+	<script type="text/javascript" src="angular/controllers/singleCharController.js"></script>
+
+	<!-- House controller and view -->
+	<script type="text/javascript" src="angular/controllers/houseController.js"></script>
+	<script type="text/javascript" src="angular/controllers/singleHouse.js"></script>
+	
+	
+
+</body>
+</html>

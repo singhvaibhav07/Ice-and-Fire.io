@@ -1,0 +1,16 @@
+<div class="container-fluid">
+	<div class="row">
+	<div class="col-lg-6 col-md-6 col-sm-12 mt-1 mb-1">
+			<button type="button" class="btn btn-primary btn-lg btn-block" ng-click="orderByField = 'name'; reverseSort = !reverseSort">Sort By Name
+				<span ng-show="orderByField == 'name'"><span ng-show="!reverseSort" class="fa fa-sort-desc" aria-hidden="true"></span><span ng-show="reverseSort" class="fa fa-sort-asc" aria-hidden="true"></span></span>
+			</button>
+	</div>
+
+	<div class="col-lg-6 col-md-6 col-sm-12 mt-1 mb-1">
+			<button type="button" class="btn btn-primary btn-lg btn-block" ng-click="orderByField = 'region'; reverseSort = !reverseSort">Sort By Region
+				<span ng-show="orderByField == 'region'"><span ng-show="!reverseSort" class="fa fa-sort-desc" aria-hidden="true"></span><span ng-show="reverseSort" class="fa fa-sort-asc" aria-hidden="true"></span></span>
+			</button>
+	</div>
+	</div>
+	<house-detail></house-detail>
+</div>
